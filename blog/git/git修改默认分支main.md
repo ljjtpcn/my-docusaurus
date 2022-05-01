@@ -1,7 +1,7 @@
 ---
 title: git修改默认分支main
 date: 2021-08-04
-authors: kuizuo
+authors: ljj
 tags: [git]
 ---
 
