@@ -1,6 +1,6 @@
 {
-  "name": "twopair.cn",
-  "version": "0.0.3",
+  "name": "kuizuo.cn",
+  "version": "0.0.2",
   "private": true,
   "scripts": {
     "start": "docusaurus start --host 0.0.0.0",
