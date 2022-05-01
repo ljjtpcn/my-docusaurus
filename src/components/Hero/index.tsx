@@ -7,13 +7,7 @@ import Link from '@docusaurus/Link'
 
 import HeroMain from './img/hero_main.svg'
 import GithubIcon from '@site/static/icons/github.svg'
-import JuejinIcon from '@site/static/icons/juejin.svg'
-import RssIcon from '@site/static/icons/rss.svg'
-import QqIcon from '@site/static/icons/qq.svg'
-import WxIcon from '@site/static/icons/wx.svg'
 import CsdnIcon from '@site/static/icons/csdn.svg'
-import CloudMusicIcon from '@site/static/icons/cloud-music.svg'
-
 import useBaseUrl from '@docusaurus/useBaseUrl'
 import Button from '../Button'
 
@@ -40,8 +34,7 @@ function Hero() {
     <animated.div className={styles.hero}>
       <div className={styles.bloghome__intro}>
         <animated.div style={animatedTexts[0]} className={styles.hero_text}>
-          Hello! 我是
-          <span className={styles.intro__name}>ljj</span>
+          Hello!
         </animated.div>
         <animated.p style={animatedTexts[1]}>
           <Translate
@@ -52,6 +45,20 @@ function Hero() {
                 <Link to='#homepage_blogs'>
                   <Translate id='hompage.hero.text.blog' description='Blog link label'>
                     技术博客
+                  </Translate>
+                </Link>
+              ),
+              project: (
+                <Link to='/project'>
+                  <Translate id='hompage.hero.text.project' description='Project link label'>
+                    实战项目
+                  </Translate>
+                </Link>
+              ),
+              links: (
+                <Link to='/resources'>
+                  <Translate id='hompage.hero.text.link' description='Link link label'>
+                    资源导航
                   </Translate>
                 </Link>
               ),
@@ -67,14 +74,14 @@ function Hero() {
             </Translate>
           </animated.p>
         )} */}
-        <SocialLinks animatedProps={animatedTexts[4]} />
+        {/* <SocialLinks animatedProps={animatedTexts[4]} />
         {
           <animated.div style={animatedTexts[2]}>
-            <Button isLink href={'https://github.com/ljjtpcn'}>
-              Github主页
+            <Button isLink href={'./about'}>
+              自我介绍
             </Button>
           </animated.div>
-        }
+        } */}
       </div>
       <HeroMainImage />
     </animated.div>
@@ -90,21 +97,21 @@ function SocialLinks({ animatedProps, ...props }) {
       <a href='https://github.com/ljjtpcn' target='_blank'>
         <GithubIcon />
       </a>
-      <a href='https://juejin.cn/user/3452908540792487' target='_blank'>
+      {/* <a href='https://juejin.cn/user/1565318510545901' target='_blank'>
         <JuejinIcon />
-      </a>
-      {/* <a href='https://blog.csdn.net/kuizuo12' target='_blank'>
-        <CsdnIcon />
       </a> */}
-      <a href='https://wpa.qq.com/msgrd?v=3&amp;uin=1608376772&amp;site=qq' target='_blank'>
-        <QqIcon />
+      <a href='https://blog.csdn.net/weixin_46167872?spm=1008.2028.3001.5343' target='_blank'>
+        <CsdnIcon />
       </a>
+      {/* <a href='https://wpa.qq.com/msgrd?v=3&amp;uin=911993023&amp;site=qq' target='_blank'>
+        <QqIcon />
+      </a> */}
       {/* <a href='' target='_blank'>
         <WxIcon />
       </a> */}
-      <a href='https://music.163.com/#/user/home?id=406109166' target='_blank'>
+      {/* <a href='https://music.163.com/#/user/home?id=1333010742' target='_blank'>
         <CloudMusicIcon />
-      </a>
+      </a> */}
     </animated.div>
   )
 }

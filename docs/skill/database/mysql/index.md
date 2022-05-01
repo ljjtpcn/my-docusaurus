@@ -144,7 +144,6 @@ CREATE TABLE 表名(
 > + 日期类型 `datetime`  -- 只包含年月日时分秒, `yyyy-MM-dd HH:mm:ss`
 > + 时间戳类型 `timestamp` --  包含年月日时分秒,  如果将来不给这个字段赋值,或赋值为null,则默认自动使用当前的系统时间
 > + 字符串类型 `varchar(10)` -- 表示该字段最大10个字符数
-
 + 例:
 
 ```sql
@@ -249,7 +248,6 @@ CREATE TABLE stu LIKE student; -- 创建一个长得像(LIKE) student 的stu表(
 ## 非空约束
 
 > NOT NULL **某一列的值不能为`NULL`**
-
 + 在创建表时添加非空约束
 
 ```sql
@@ -272,7 +270,6 @@ ALTER TABLE stu MODIFY name VARCHAR(20);
 ## 唯一约束(唯一索引)
 
 > UNIQUE **某一列的值不能重复**
-
 + 在创建表时添加唯一约束
 
 ```sql
@@ -293,11 +290,9 @@ ALTER TABLE stu MODIFY phone VARCHAR(20) UNIQUE;
 ALTER TABLE stu DROP INDEX phone; -- 删除唯一约束(与非空约束删除语法不一样)
 ```
 > 唯一约束可以有`NULL`值, 但是只能有一条记录为`NULL`值
-
 ## 主键约束
 
 > PRIMARY KEY **非空且唯一**
-
 + 在创建表时添加主键约束
 
 ```sql
@@ -321,13 +316,11 @@ ALTER TABLE stu DROP PRIMARY KEY;  -- 删除主键约束(与前面约束删除�
 ```
 
 > 1. 一张表中只能有一个字段为主键</br>
-
 2. 主键就是表中记录的唯一标识  
 
 ## 自动增长
 
 > 如果某一列是数值类型,使用 `auto_increment` 可以完成自动增长,一般配合主键约束使用
-
 + 在创建表时添加主键约束,完成自动增长
 
 ```sql
@@ -354,7 +347,6 @@ ALTER TABLE stu MODIFY id INT AUTO_INCREMENT;
 ## 外键约束
 
 > FOREIGN KEY 让表与表产生关系, 从而保证数据的正确性
-
 + 在创建表时添加外键
 
 ```sql
@@ -384,7 +376,6 @@ CREATE TABLE class(
 	id INT PRIMARY KEY AUTO_INCREMENT,
 	username VARCHAR(20),
 );
-
 CREATE TABLE student(
 	id INT PRIMARY KEY AUTO_INCREMENT,
 	NAME VARCHAR(20),
@@ -395,7 +386,6 @@ CREATE TABLE student(
 ```
 > `class`表必须先创建, 即被关联的表必须先创建才能被关联
 > ~~先有爸爸后有儿子~~,外键可以为`null`但是不能为不存在的值
-
 ---
 
 ## 级联更新
@@ -415,7 +405,6 @@ ALTER TABLE 表名 ADD CONSTRAINT 外键名称 FOREIGN KEY (外键列名称) REF
 ```
 > **级联更新**为ON `UPDATE` CASCADE</br>
 >    **级联删除**为ON `DELETE` CASCADE
-
 # DML
 
 ##  添加数据
@@ -435,7 +424,6 @@ INSERT INTO student(name) VALUES ('张三'), ('李四'), ('王五');
 > `INSERT INTO 表名 VALUES(值1, 值2, ..., 值n);`
 >
 > 除了数字类型,其他类型需要使用引号(单双均可)引起来
-
 ## 删除数据
 
 ```sql
@@ -450,7 +438,6 @@ DELETE FROM student WHERE id = 1; -- 从表student中删除id值为1的数据
 >
 >    + `DELETE FROM 表名;` -- 不推荐使用。有多少条记录就会执行多少次删除操作,效率低
 >    + `TRUNCATE TABLE 表名;` -- 推荐使用。先删除表然后再创建一张一模一样的空表，效率高
-
 ## 修改数据
 
 ```sql
@@ -460,7 +447,6 @@ UPDATE student SET age = 110, score = 100 WHERE id = 1;
 ```
 
 > 如果不加任何条件, 则会将表中所有记录全部修改
-
 ---
 
 
@@ -546,7 +532,6 @@ SELECT * FROM student WHERE english IS NOT NULL; -- 正确语法
 ```
 
 >  对于`NULL`值的查询不能使用`=`或者`!=`, 而应当使用`IS`或者`IS NOT`
-
 ### 模糊查询
 
 `%`: 匹配多个(可以是0个)字符
@@ -567,7 +552,6 @@ SELECT * FROM student WHERE NAME LIKE '%马%';
 ### 排序查询
 
 >  根据某些字段进行升序或降序排列
-
 **语法: ORDER BY 排序字段1, 排序方式1, 排序字段2, 排序方式2, ...;**
 
 ```sql
@@ -580,7 +564,6 @@ SELECT * FROM student ORDER BY math ASC, english ASC;
 ### 聚合函数
 
 >  将某一列数据作为一个整体,进行纵向的计算
-
 1. `count`: 计算个数
 2. `max(min)`: 取最大(最小)值
 3. `sum`: 计算和
@@ -593,11 +576,9 @@ SELECT AVG(IFNULL(english, 0)) FROM student;
 ```
 
 >  聚合函数的计算排除了`NULL`值,如需加上`NULL`,可使用`IFNULL`语法或选择不包含`NULL`的列进行计算
-
 ### 分组查询
 
 >  以某一字段为依据进行分组,再进行各种查询
-
 **语法: GROUP BY 分组字段;**
 
 ```sql
@@ -615,7 +596,6 @@ SELECT sex, AVG(IFNULL(math, 0)), COUNT(id) 人数 FROM student WHERE math > 70 
 >  1. 在**分组之前**可以使用`WHERE`条件限制参加分组的数据</br>
 >  3. 在**分组之后**可以使用`HAVING`条件限制需要查询的分组的数据
 `WHERE`和`HAVING`的区别?
-
 1. `WHERE`在分组之前进行限定,如果不满足条件,则不参与分组。`HAVING`在分组之后进行限定,如果不满足结果, 则不会被查询出来
 2. `WHERE`后不可以跟聚合函数, `HAVING`可以进行聚合函数的判断
 
@@ -623,14 +603,12 @@ SELECT sex, AVG(IFNULL(math, 0)), COUNT(id) 人数 FROM student WHERE math > 70 
 ### 分页查询
 
 > 分页显示查询结果
-
 **语法: LIMIT 开始的索引, 每页查询的条数;**
 
 ```sql
 -- 每页显示3条
 SELECT * FROM student LIMIT 0, 3; -- 第一页
 SELECT * FROM student LIMIT 3, 3; -- 第二页
-
 -- 公式: 开始的页码 = (当前的页码 - 1) * 每页显示的条数
 ```
 ~~或~~
@@ -644,7 +622,6 @@ limit n  --等价于 limit 0, n
 ```
 
 > `LIMIT`为MySQL的**方言**
-
 ---
 
 
@@ -656,7 +633,6 @@ limit n  --等价于 limit 0, n
 ![](https://hexoljj.oss-cn-shenzhen.aliyuncs.com/img/202112161841839.jpg)
 
 > 准备sql
-
 + 创建部门表
 ```sql
 CREATE TABLE dept(
@@ -688,7 +664,6 @@ INSERT INTO emp(NAME,gender,salary,join_date,dept_id) VALUES('蜘蛛精','女',4
 + 笛卡尔积: 有两个集合`A, B`, 取这两个集合的所有组成情况。
 
 > 要完成多表查询, 需要消除无用的数据
-
 ## 内连接查询
 
 + 隐式内连接: 使用where条件消除无用数据
@@ -696,10 +671,8 @@ INSERT INTO emp(NAME,gender,salary,join_date,dept_id) VALUES('蜘蛛精','女',4
 ```sql
 -- 查询所有员工信息和对应的部门信息
 SELECT * FROM emp,dept WHERE emp.`dept_id` = dept.`id`;
-
 -- 查询员工表的姓名，性别。部门表的名称
 SELECT emp.name, emp.gender, dept.name FROM emp, dept WHERE emp.`dept_id` = dept.`id`;
-
 --简化(给表起别名) 常用 --
 SELECT 
 	t1.name, -- 员工表的姓名
@@ -722,7 +695,6 @@ SELECT * FROM emp t1       JOIN dept t2 ON t1.`dept_id` = t2.`id`;
 > 1. 从哪些表中查询数据
 > 2. 条件是什么
 > 3. 查询哪些字段
-
 ## 外连接查询
 
 + 左外连接(查询的是左表所有数据以及其交集部分)
@@ -744,7 +716,6 @@ SELECT t1.name, t2.name FROM emp t1 RIGHT JOIN dept t2 ON t1.`dept_id` = t2.`id`
 ##  子查询
 
 > 查询中嵌套查询,称嵌套查询为子查询
-
 + 子查询的结果是单行单列的(使用运算符 `>` `>=` `<` `<=` `=`来判断)
 
 ```sql
@@ -760,7 +731,6 @@ SELECT id FROM dept WHERE NAME = '财务部' OR NAME = '市场部';
 SELECT * FROM emp WHERE dept_id = 3 OR dept_id = 2;
 -- 子查询
 SELECT * FROM emp WHERE dept_id IN (SELECT id FROM dept WHERE NAME = '财务部' OR NAME = '市场部');
-
 --当然,也可以使用学到的隐式内连接得到同样的效果
 SELECT emp.* FROM emp, dept WHERE dept.`NAME` IN( "财务部", "市场部") AND emp.`dept_id` = dept.`id`;
 ```
@@ -772,7 +742,6 @@ SELECT emp.* FROM emp, dept WHERE dept.`NAME` IN( "财务部", "市场部") AND 
 -- 子查询
 SELECT * FROM dept t1 ,(SELECT * FROM emp WHERE emp.`join_date` >'2011-11-11') t2
 WHERE t1.id = t2.dept_id;
-
 -- 普通内连接
 SELECT * FROM emp t1,dept t2 WHERE t1.`dept_id` = t2.`id` AND t1`join_date` >  '2011-11-11'
 ```
@@ -804,7 +773,6 @@ DROP USER '用户名'@'主机名';
 UPDATE USER SET PASSWORD = PASSWORD('新密码') WHERE USER = '用户名';
 --例
 UPDATE USER SET PASSWORD = PASSWORD('abcd') WHERE USER = 'lisi';
-
 SET PASSWORD FOR '用户名'@'主机名' = PASSWORD('新密码');
 --例
 SET PASSWORD FOR 'root'@'localhost' = PASSWORD('123');
@@ -820,7 +788,6 @@ SELECT * FROM USER;
 ```
 > 通配符： % 表示可以在任意主机使用用户登录数据库
 ## 权限管理
-
 1. 查询权限
 
 ```sql
@@ -834,13 +801,10 @@ SHOW GRANTS FOR 'lisi'@'%';
 ```sql
 -- 授予权限
 GRANT 权限列表 ON 数据库名.表名 TO '用户名'@'主机名';
-
 -- 给张三用户授予查询, 修改权限，在任意数据库任意表上
 GRANT SELECT,UPDATE ON *.* TO 'zhangsan'@'localhost';
-
 -- 给张三用户授予创建权限，在任意数据库任意表上（注意授予创建权限时不加 ON！！！）
 GRANT CREATE TO 'zhangsan'@'localhost';
-
 -- 给张三用户授予所有权限，在任意数据库任意表上
 GRANT ALL ON *.* TO 'zhangsan'@'localhost';
 ```
@@ -918,7 +882,6 @@ COUNT(1) —忽略所有列，用 1 代表代码行，不会忽略 NULL 值
 如果表只有一个字段，则 select count(\*)最优。
 
 > 参考链接 [count(1)、count(\*)与 count(列名)的执行区别](https://www.cnblogs.com/Memories-off/p/10435558.html)
-
 使用聚合函数，常常与分组 GROUP BY 和 HAVING 结合使用。
 
 ---
@@ -928,7 +891,6 @@ COUNT(1) —忽略所有列，用 1 代表代码行，不会忽略 NULL 值
 **设计关系数据库时，遵从不同的规范要求，设计出合理的关系型数据库，这些不同的规范要求被称为不同的范式，各种范式呈递次规范，越高的范式数据库冗余越小。关系数据库有六种范式：第一范式(1NF)、第二范式(2NF)、第三范式(3NF)、巴斯-科德范式(BCNF)、第四范式(4NF)和第五范式(5NF，又称完美范式)。**
 
 > 以下为一张普通表通过遵循前三个范式所得到的最终表的处理过程 
-
 **<center>普通表</center>**
 
 **<center>![](https://hexoljj.oss-cn-shenzhen.aliyuncs.com/img/202112131021566.png)</center>**
@@ -936,7 +898,6 @@ COUNT(1) —忽略所有列，用 1 代表代码行，不会忽略 NULL 值
 ## 第一范式(1NF)
 
 > 对于添加的一个规范要求，所有的域都应该是原子性的，即数据库表的每一列都是不可分割的原子数据项，而不能是集合，数组，记录等非原子数据项。
-
 将**系**列拆分成**系名**,**系主任**两列
 **<center>遵循第一范式处理后的表</center>**
 
@@ -951,7 +912,6 @@ COUNT(1) —忽略所有列，用 1 代表代码行，不会忽略 NULL 值
 ##  第二范式(2NF)
 
 > 在1NF的基础上，非码属性必须完全依赖于候选码（在1NF基础上消除非主属性对主码的部分函数依赖）
-
 消除`(姓名,系名,系主任)`非主属性对码`(学号,课程)`的部分依赖,剩下保留命名为**选课表**,新增**学生表**
 
 + 函数依赖
@@ -989,7 +949,6 @@ COUNT(1) —忽略所有列，用 1 代表代码行，不会忽略 NULL 值
     例如: 该表中码为`(学号,课程名称)`
 
 > 在`1NF`**表**中,分数完全依赖于`(学号,课程)`,故不删除</br>在**学生表**中,`学号`为主属性,`(姓名,系名,系主任)`为非主属性,`(分数,课程名称)`属性可删除
-
 **<center>将表拆分,解决问题1(数据冗余)</center>**
 
 **<center>![](https://hexoljj.oss-cn-shenzhen.aliyuncs.com/img/202112131112617.png)</center>**
@@ -997,7 +956,6 @@ COUNT(1) —忽略所有列，用 1 代表代码行，不会忽略 NULL 值
 ## 第三范式(3NF)
 
 > 在2NF基础上，任何非主属性不依赖于其它非主属性（在2NF基础上消除传递依赖）
-
 观察上方`2NF`**学生表**可知,其存在传递依赖`学号 --> 系名, 系名 --> 系主任`,故需消除该传递依赖,将学生表中系主任列删掉,新增**系表**
 
 **<center>解决问题2,3(增删数据)</center>**
@@ -1015,7 +973,6 @@ COUNT(1) —忽略所有列，用 1 代表代码行，不会忽略 NULL 值
 ## 事务的基本介绍
 
 > 如果一个包含多个步骤的业务操作，被事务管理，那么这些操作要么同时成功，要么同时失败。
-
 + 操作: 
 
 ```sql
@@ -1075,7 +1032,6 @@ SET @@autocommit = 0; -- 1 代表自动提交  0 代表手动提交
 		`select @@tx_isolation;`
 	* 数据库设置隔离级别：
         `set global transaction isolation level  级别字符串;`
-
 # 索引
 
 索引（Index）是帮助 MySQL 高效获取数据的数据结构。
@@ -1106,13 +1062,10 @@ SET @@autocommit = 0; -- 1 代表自动提交  0 代表手动提交
 ```
 -- 显示所有的索引信息
 SHOW INDEX FROM 表名
-
 -- 添加一个全文索引 索引名 字段名
 ALTER TABLE 表名 ADD FULLTEXT INDEX 索引名(字段名)
-
 -- EXPLAIN 分析sql执行的状况
 EXPLAIN SELECT * FROM student; -- 非全文索引
-
 ```
 
 ## 3、测试索引
@@ -1130,24 +1083,20 @@ RETURNS INT
 BEGIN
 	DECLARE num INT DEFAULT 1000;
 	DECLARE i INT DEFAULT 0;
-
 	WHILE i<num DO
 	INSERT INTO big(`name`,`age`,`phone`) VALUES (CONCAT('用户',i),FLOOR(RAND()*100),CONCAT('15',FLOOR(RAND()*((99999999-100000000)+100000000))));
 		SET i = i+1;
 	END WHILE;
 	RETURN i;
 END;
-
 SELECT mock_data(); -- 执行函数
 ```
 
 ```sql
 SELECT * FROM big WHERE `name`='用户99999' --此时查询数据近0.257s
-
 -- id_表名_字段名 索引名
 -- CREATE INDEX 索引名 ON 表(字段);
 CREATE INDEX id_big_name ON big(`name`);
-
 SELECT * FROM big WHERE `name`='用户99999' --此时查询数据0.001s
 ```
 
@@ -1162,6 +1111,3 @@ SELECT * FROM big WHERE `name`='用户99999' --此时查询数据0.001s
 `Btree`：`INNODB` 的默认数据结构
 
 有关索引的一篇文章[MySQL 索引背后的数据结构及算法原理](http://blog.codinglabs.org/articles/theory-of-mysql-index.html)
-
-
-
