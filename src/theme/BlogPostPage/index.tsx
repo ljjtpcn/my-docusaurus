@@ -8,8 +8,8 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext'
 import TOC from '@theme/TOC'
 
 import BrowserOnly from '@docusaurus/BrowserOnly'
-import 'gitalk/dist/gitalk.css'
-import GitalkComponent from 'gitalk/dist/gitalk-component'
+// import 'gitalk/dist/gitalk.css'
+// import GitalkComponent from 'gitalk/dist/gitalk-component'
 
 import useViews from './useViews'
 
@@ -30,19 +30,19 @@ function BlogPostPage(props) {
 
   const views = useViews(props.content)
 
-  const labels = tags.length > 0 ? tags.map((t) => t.label) : ['Gitalk', title]
-  const options = {
-    clientID: '3f390a6f6e979a76d1a1',
-    clientSecret: 'e2cd29b8055fcc2265b2292387236c36857e21fc',
-    repo: 'blog',
-    owner: 'kuizuo',
-    admin: ['kuizuo'],
-    id: title,
-    title: title,
-    labels: labels,
-    body: siteUrl + permalink + '\n' + description,
-    distractionFreeMode: false,
-  }
+  // const labels = tags.length > 0 ? tags.map((t) => t.label) : ['Gitalk', title]
+  // const options = {
+  //   clientID: '3f390a6f6e979a76d1a1',
+  //   clientSecret: 'e2cd29b8055fcc2265b2292387236c36857e21fc',
+  //   repo: 'blog',
+  //   owner: 'kuizuo',
+  //   admin: ['kuizuo'],
+  //   id: title,
+  //   title: title,
+  //   labels: labels,
+  //   body: siteUrl + permalink + '\n' + description,
+  //   distractionFreeMode: false,
+  // }
   const image = assets.image ?? frontMatter.image
 
   return (
@@ -82,7 +82,7 @@ function BlogPostPage(props) {
       </BlogPostItem>
       {(nextItem || prevItem) && <BlogPostPaginator nextItem={nextItem} prevItem={prevItem} />}
 
-      <BrowserOnly fallback={<div></div>}>{() => <GitalkComponent options={options} />}</BrowserOnly>
+      {/* <BrowserOnly fallback={<div></div>}>{() => <GitalkComponent options={options} />}</BrowserOnly> */}
     </BlogLayout>
   )
 }
