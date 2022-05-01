@@ -75,13 +75,13 @@ function Hero() {
           </animated.p>
         )} */}
         <SocialLinks animatedProps={animatedTexts[4]} />
-        {/* {
+        {
           <animated.div style={animatedTexts[2]}>
-            <Button isLink href={'./about'}>
+            {/* <Button isLink href={'./about'}>
               自我介绍
-            </Button>
+            </Button> */}
           </animated.div>
-        } */}
+        }
       </div>
       <HeroMainImage />
     </animated.div>
