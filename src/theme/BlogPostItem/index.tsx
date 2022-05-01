@@ -103,30 +103,30 @@ function BlogPostItem(props) {
     )
   }
 
-  const renderCopyright = () => {
-    return (
-      <div className='post-copyright'>
-        <div className='post-copyright__author'>
-          <span className='post-copyright-meta'>作者:</span>{' '}
-          <span className='post-copyright-info'>
-            <a>{authors.map((a) => a.name).join(',')}</a>
-          </span>
-        </div>
-        <div className='post-copyright__type'>
-          <span className='post-copyright-meta'>链接:</span>{' '}
-          <span className='post-copyright-info'>
-            <a href={siteUrl + permalink}>{siteUrl + permalink}</a>
-          </span>
-        </div>
-        <div className='post-copyright__notice'>
-          <span className='post-copyright-meta'>来源:</span>{' '}
-          <span className='post-copyright-info'>
-            <a href={siteUrl}>{siteTitle}</a> 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
-          </span>
-        </div>
-      </div>
-    )
-  }
+  // const renderCopyright = () => {
+  //   return (
+  //     <div className='post-copyright'>
+  //       <div className='post-copyright__author'>
+  //         <span className='post-copyright-meta'>作者:</span>{' '}
+  //         <span className='post-copyright-info'>
+  //           <a>{authors.map((a) => a.name).join(',')}</a>
+  //         </span>
+  //       </div>
+  //       <div className='post-copyright__type'>
+  //         <span className='post-copyright-meta'>链接:</span>{' '}
+  //         <span className='post-copyright-info'>
+  //           <a href={siteUrl + permalink}>{siteUrl + permalink}</a>
+  //         </span>
+  //       </div>
+  //       <div className='post-copyright__notice'>
+  //         <span className='post-copyright-meta'>来源:</span>{' '}
+  //         <span className='post-copyright-info'>
+  //           <a href={siteUrl}>{siteTitle}</a> 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+  //         </span>
+  //       </div>
+  //     </div>
+  //   )
+  // }
 
   return (
     <StyledBlogItem
@@ -141,7 +141,7 @@ function BlogPostItem(props) {
       </Head>
 
       {/* 统计 */}
-      {isBlogPostPage && <Count title={title} />}
+      {/* {isBlogPostPage && <Count title={title} />} */}
       <div className={`row ${!isBlogPostPage ? 'blog-list--item' : ''}`} style={{ margin: '0px' }}>
         <div className={`col ${isBlogPostPage ? `col--12 article__details` : `col--12`}`}>
           {/* 博文部分 */}
@@ -154,12 +154,12 @@ function BlogPostItem(props) {
             </MarkdownSection>
           </article>
           <footer className='article__footer padding-top--md '>
-            {isBlogPostPage && (
+            {/* {isBlogPostPage && (
               <>
                 {/* 版权 */}
-                {authors && renderCopyright()}
+                {/* {authors && renderCopyright()} */}
               </>
-            )}
+            )} */}
             {!isBlogPostPage && (
               <span className='footer__read_count'>
                 <Eye className='footer__eye' style={{ verticalAlign: 'middle' }} /> {views}
@@ -177,27 +177,27 @@ function BlogPostItem(props) {
   )
 }
 
-function Count({ title, ...post }) {
-  return (
-    <BrowserOnly fallback={<div></div>}>
-      {() => {
-        const addViewCount = async () => {
-          await fetch('https://blog.kuizuo.cn/posts/increase_view', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ title }),
-          })
-        }
+// function Count({ title, ...post }) {
+//   return (
+//     <BrowserOnly fallback={<div></div>}>
+//       {() => {
+//         const addViewCount = async () => {
+//           await fetch('https://blog.kuizuo.cn/posts/increase_view', {
+//             method: 'POST',
+//             headers: {
+//               'Content-Type': 'application/json',
+//             },
+//             body: JSON.stringify({ title }),
+//           })
+//         }
 
-        useEffect(() => {
-          addViewCount()
-        }, [])
-        return <></>
-      }}
-    </BrowserOnly>
-  )
-}
+//         useEffect(() => {
+//           addViewCount()
+//         }, [])
+//         return <></>
+//       }}
+//     </BrowserOnly>
+//   )
+// }
 
 export default BlogPostItem

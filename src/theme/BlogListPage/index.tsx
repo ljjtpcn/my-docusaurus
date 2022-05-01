@@ -78,7 +78,7 @@ function BlogListPage(props) {
             <div className={`row ${styles.card}`}>
               <div className={styles['personal-info-wrapper']}>
                 <img className={styles['personal-img']} src='/img/logo.webp' alt='logo'></img>
-                <h3 className={styles['personal-name']}>愧怍</h3>
+                <h3 className={styles['personal-name']}>Li</h3>
                 <h3 className={styles['personal-name']}>
                   文章数 {blogCount} | 标签数 {tagCount}
                 </h3>
