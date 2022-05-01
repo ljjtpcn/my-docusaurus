@@ -14,10 +14,9 @@ keywords:
 
 
 - Java
-- MySQL
-- JavaScript
 - 前端
 - 后端
-
+- Vue
+- JavaScript
 
 **做到即查即用，能复制粘贴解决的，就绝不百度。**
