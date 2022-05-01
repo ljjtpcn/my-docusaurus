@@ -69,7 +69,7 @@ function BlogPostItem(props) {
           {renderTags()}
         </div>
 
-        {/* {isBlogPostPage && authors && <BlogPostAuthors authors={authors} assets={assets} />} */}
+        {isBlogPostPage && authors && <BlogPostAuthors authors={authors} assets={assets} />}
       </header>
     )
   }
@@ -103,6 +103,31 @@ function BlogPostItem(props) {
     )
   }
 
+  const renderCopyright = () => {
+    return (
+      <div className='post-copyright'>
+        <div className='post-copyright__author'>
+          <span className='post-copyright-meta'>作者:</span>{' '}
+          <span className='post-copyright-info'>
+            <a>{authors.map((a) => a.name).join(',')}</a>
+          </span>
+        </div>
+        <div className='post-copyright__type'>
+          <span className='post-copyright-meta'>链接:</span>{' '}
+          <span className='post-copyright-info'>
+            <a href={siteUrl + permalink}>{siteUrl + permalink}</a>
+          </span>
+        </div>
+        <div className='post-copyright__notice'>
+          <span className='post-copyright-meta'>来源:</span>{' '}
+          <span className='post-copyright-info'>
+            <a href={siteUrl}>{siteTitle}</a> 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+          </span>
+        </div>
+      </div>
+    )
+  }
+
   return (
     <StyledBlogItem
       isDark={isDark}
@@ -116,7 +141,7 @@ function BlogPostItem(props) {
       </Head>
 
       {/* 统计 */}
-      {/* {isBlogPostPage && <Count title={title} />} */}
+      {isBlogPostPage && <Count title={title} />}
       <div className={`row ${!isBlogPostPage ? 'blog-list--item' : ''}`} style={{ margin: '0px' }}>
         <div className={`col ${isBlogPostPage ? `col--12 article__details` : `col--12`}`}>
           {/* 博文部分 */}
