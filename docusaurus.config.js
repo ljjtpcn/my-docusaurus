@@ -9,16 +9,16 @@ const friendLinks = [
 ]
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'TwoPair',
+  title: 'ljj的小站',
   titleDelimiter: '-',
-  url: 'https://blog.twopair.cn',
+  url: 'https://twopair.cn',
   baseUrl: '/',
   favicon: 'img/favicon.ico',
   organizationName: 'ljjtpcn', // Usually your GitHub org/user name.
-  projectName: 'ljjtpcn', // Usually your repo name.
+  projectName: 'twopair.cn', // Usually your repo name.
   /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
   themeConfig: {
-    image: 'img/TwoPair.jpg',
+    image: 'img/kuizuo.jpg',
     announcementBar: {
       id: 'announcementBar-2', // Any value that will identify this message.
       content: `代码能重写，人不能重来`,
@@ -26,14 +26,14 @@ const config = {
     metadata: [
       {
         name: 'keywords',
-        content: 'TwoPair, TwoPair, blog, javascript, typescript, python ,node, react, vue, web, 前端, 后端',
+        content: 'ljj, blog, javascript, typescript, python ,node, react, vue, web, 前端, 后端',
       },
     ],
     hideableSidebar: true,
     navbar: {
-      title: 'TwoPair',
+      title: 'ljj',
       logo: {
-        alt: 'TwoPair',
+        alt: 'ljj',
         src: 'img/logo.webp',
         srcDark: 'img/logo.webp',
       },
@@ -43,11 +43,11 @@ const config = {
           to: 'tags',
           position: 'right',
         },
-        {
-          label: '归档',
-          to: 'archive',
-          position: 'right',
-        },
+        // {
+        //   label: '归档',
+        //   to: 'archive',
+        //   position: 'right',
+        // },
         {
           label: '学习',
           position: 'right',
@@ -68,19 +68,19 @@ const config = {
         //   items: [
         //     {
         //       label: '资源导航',
-        //       to: '/resources', // 'https://nav.TwoPair.cn'
+        //       to: '/resources', // 'https://nav.kuizuo.cn'
         //     },
         //     {
         //       label: 'JS代码混淆与还原',
-        //       to: 'https://deobfuscator.TwoPair.cn', // 'https://deobfuscator.TwoPair.cn'
+        //       to: 'https://deobfuscator.kuizuo.cn', // 'https://deobfuscator.kuizuo.cn'
         //     },
         //     {
         //       label: 'CyberChef在线加解密',
-        //       to: 'http://cipher.TwoPair.cn', // 'http://cipher.TwoPair.cn'
+        //       to: 'http://cipher.kuizuo.cn', // 'http://cipher.kuizuo.cn'
         //     },
         //     {
-        //       label: 'TwoPair在线工具',
-        //       to: 'http://tools.TwoPair.cn', // 'http://tools.TwoPair.cn'
+        //       label: '愧怍在线工具',
+        //       to: 'http://tools.kuizuo.cn', // 'http://tools.kuizuo.cn'
         //     },
         //   ],
         // },
@@ -94,7 +94,7 @@ const config = {
     // algolia: {
     //   apiKey: '87223cb5a5ff37c4dbbb616812c65a59',
     //   appId: '2NBW5YNFON',
-    //   indexName: 'TwoPair',
+    //   indexName: 'kuizuo',
     // },
     footer: {
       style: 'dark',
@@ -142,7 +142,7 @@ const config = {
           items: friendLinks,
         },
       ],
-      copyright: `<p>Copyright © ${new Date().getFullYear()} TwoPair Built with Docusaurus.</p><p><a href="http://beian.miit.gov.cn/" >${beian}</a>`,
+      copyright: `<p>Copyright © ${new Date().getFullYear()} ljj Built with Docusaurus.</p><p><a href="http://beian.miit.gov.cn/" >${beian}</a>`,
       //</p><a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" style="border-width:0" src="/img/creative-commons-license-icon.png" /></a><br />本站所有内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/deed.zh-Hans" >CC BY-NC 4.0 协议</a>，转载须注明署名和出处，且不可用于商业用途。若与其他同步平台协议冲突，以本网站为准。
     },
     prism: {
@@ -177,7 +177,7 @@ const config = {
         docs: {
           path: 'docs',
           sidebarPath: 'sidebars.js',
-          // editUrl: "https://github.com/TwoPair/TwoPair.cn/tree/master",
+          // editUrl: "https://github.com/kuizuo/kuizuo.cn/tree/master",
           // remarkPlugins: [require("remark-math")],
           // rehypePlugins: [require("rehype-katex")],
           // showLastUpdateAuthor: true,
@@ -196,8 +196,8 @@ const config = {
             defaultReadingTime({ content, options: { wordsPerMinute: 300 } }),
           feedOptions: {
             type: 'all',
-            title: 'TwoPair',
-            copyright: `Copyright © ${new Date().getFullYear()} TwoPair Built with Docusaurus.<p><a href="http://beian.miit.gov.cn/" class="footer_lin">${beian}</a></p>`,
+            title: 'ljj',
+            copyright: `Copyright © ${new Date().getFullYear()} ljj Built with Docusaurus.<p><a href="http://beian.miit.gov.cn/" class="footer_lin">${beian}</a></p>`,
           },
         },
         theme: {
@@ -238,7 +238,7 @@ const config = {
     //       {
     //         tagName: 'link',
     //         rel: 'icon',
-    //         href: '/img/TwoPair.jpg',
+    //         href: '/img/kuizuo.jpg',
     //       },
     //       {
     //         tagName: 'link',
