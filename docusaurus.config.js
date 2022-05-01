@@ -84,11 +84,11 @@ const config = {
         //     },
         //   ],
         // },
-        {
-          label: '实战项目',
-          position: 'right',
-          to: '/project',
-        },
+        // {
+        //   label: '实战项目',
+        //   position: 'right',
+        //   to: '/project',
+        // },
       ],
     },
     // algolia: {
@@ -110,10 +110,10 @@ const config = {
               label: '技术笔记',
               to: 'docs/skill',
             },
-            {
-              label: '实战项目',
-              to: 'project',
-            },
+            // {
+            //   label: '实战项目',
+            //   to: 'project',
+            // },
           ],
         },
         {
