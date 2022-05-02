@@ -1,5 +1,5 @@
 ---
-title: DQL
+title: 数据查询语言(DQL)
 date: 2021-12-30
 tags: [mysql, 数据库]
 ---

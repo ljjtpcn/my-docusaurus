@@ -1,5 +1,5 @@
 ---
-title: DCL
+title: 数据控制语句(DCL)
 date: 2021-12-30
 tags: [mysql, 数据库]
 ---

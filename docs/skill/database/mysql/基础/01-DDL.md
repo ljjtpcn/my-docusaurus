@@ -1,5 +1,5 @@
 ---
-title: DDL
+title: 数据定义语言(DDL)
 date: 2021-12-30
 tags: [mysql, 数据库]
 ---
