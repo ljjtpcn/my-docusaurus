@@ -16,7 +16,7 @@ tags: [maven, mybatis, logback, log4j]
 
 演示项目树结构如下图：
 
-![image-20220510190351427](https://twopair.cn/img/202205101903593.png)
+![](https://hexoljj.oss-cn-shenzhen.aliyuncs.com/img/202205101928135.png)
 
 ## 配置1
 
