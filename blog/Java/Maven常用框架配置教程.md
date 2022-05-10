@@ -10,7 +10,7 @@ tags: [maven, mybatis, logback, log4j]
 文章将贴出几种`pom.xml`,`mybatis-config.xml` `db.properties`, `log4j.properties`   `logback.xml`配置文件。
 :::
 
-## 介绍
+## START
 
 既然你点开了这篇文章，说明你至少了解了`Maven`的作用,但苦于不知道如何配置`pom`等文件，所有这里默认你的`Java`工程是由`Maven`构建管理的,如果不是，请点击[maven教程](https://www.liaoxuefeng.com/wiki/1252599548343744/1309301146648610) 了解后再来。
 
@@ -98,7 +98,7 @@ import TabItem from '@theme/TabItem';
         PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
-    <!--引入database.properties文件中的信息-->
+    <!--引入db.properties文件中的信息-->
     <properties resource="db.properties"/>
 
     <settings>
@@ -140,18 +140,18 @@ import TabItem from '@theme/TabItem';
 </TabItem>
 <TabItem value="db" label="db.properties">
 
-```markdown
+```properties
 jdbc.driver=com.mysql.cj.jdbc.Driver
-jdbc.url=
-jdbc.userName=
-jdbc.passWorld=
+jdbc.url=数据库链接地址
+jdbc.userName=数据库用户名
+jdbc.passWorld=数据库密码
 ```
 
 </TabItem>
 
 <TabItem value="log4j" label="log4j.properties">
 
-```markdown
+```properties
 log4j.rootLogger=DEBUG,CONSOLE,file
 log4j.logger.cn.smbms.dao=debug
 log4j.logger.com.ibatis=debug
@@ -273,7 +273,7 @@ log4j.logger.org.mybatis.example.BlogMapper=TRACE
         PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
-    <!--引入database.properties文件中的信息-->
+    <!--引入db.properties文件中的信息-->
     <properties resource="db.properties"/>
 
     <settings>
@@ -315,11 +315,11 @@ log4j.logger.org.mybatis.example.BlogMapper=TRACE
 </TabItem>
 <TabItem value="db" label="db.properties">
 
-```markdown
+```properties
 jdbc.driver=com.mysql.cj.jdbc.Driver
-jdbc.url=
-jdbc.userName=
-jdbc.passWorld=
+jdbc.url=数据库链接地址
+jdbc.userName=数据库用户名
+jdbc.passWorld=数据库密码
 ```
 
 </TabItem>
@@ -427,7 +427,7 @@ jdbc.passWorld=
         PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
-    <!--引入database.properties文件中的信息-->
+    <!--引入db.properties文件中的信息-->
     <properties resource="db.properties"/>
 
     <typeAliases>
@@ -464,13 +464,19 @@ jdbc.passWorld=
 </TabItem>
 <TabItem value="db" label="db.properties">
 
-```markdown
+```properties
 jdbc.driver=com.mysql.cj.jdbc.Driver
-jdbc.url=
-jdbc.userName=
-jdbc.passWorld=
+jdbc.url=数据库链接地址
+jdbc.userName=数据库用户名
+jdbc.passWorld=数据库密码
 ```
 
 </TabItem>
 
 </Tabs>
+
+## END
+
+最后贴一下`logback`和`mybatis`联动效果图
+
+![image-20220510193942525](https://hexoljj.oss-cn-shenzhen.aliyuncs.com/img/202205101939672.png)
