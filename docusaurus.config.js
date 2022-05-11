@@ -91,11 +91,11 @@ const config = {
         // },
       ],
     },
-    algolia: {
-      apiKey: '7e52a6048ac103ac0b90467e87a01912',
-      appId: '9S549UEBU1',
-      indexName: 'TwoPair',
-    },
+    // algolia: {
+    //   apiKey: '7e52a6048ac103ac0b90467e87a01912',
+    //   appId: '9S549UEBU1',
+    //   indexName: 'TwoPair',
+    // },
     footer: {
       style: 'dark',
       links: [
