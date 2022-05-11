@@ -3,6 +3,10 @@ const path = require('path')
 const beian = '湘 ICP 备 2021016514 号'
 const friendLinks = [
   {
+    label: 'Bruce12138',
+    to: 'http://www.bruce12138.com',
+  },
+  {
     label: '峰华前端工程师',
     to: 'https://zxuqian.cn/',
   },
