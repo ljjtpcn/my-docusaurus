@@ -1,4 +1,5 @@
 ---
+slug: JetBrains-activation
 title: 关于大学生如何合理合法获取IDEA许可证
 date: 2022-02-10
 authors: ljj
@@ -46,7 +47,7 @@ tags: [IDEA, java, 教程]
 ## Step3(申请许可证)
 1. 准备工作完成回到`Step1`注册链接输入账号密码登录
 ![](https://img-blog.csdnimg.cn/img_convert/9f1fbf835ff3d44aa4ff8f9fb9886c61.png)
-1. 回到[***JETBRAINS**官网首页*](https://www.jetbrains.com/)点击导航栏`Developer Tools`选择**IDEA**(一号通用,任意选择一个IDE申请即可)
+1. 回到[**JETBRAINS**官网首页](https://www.jetbrains.com/)点击导航栏`Developer Tools`选择**IDEA**(一号通用,任意选择一个IDE申请即可)
 ![](https://img-blog.csdnimg.cn/img_convert/dbaf2f068140cd72dc4e624f22b61457.png)
 3. 点击`Buy`
 ![](https://img-blog.csdnimg.cn/img_convert/0e12be05e3cae7141e2cb4a235a1fc33.png)
@@ -63,7 +64,7 @@ tags: [IDEA, java, 教程]
 ![](https://img-blog.csdnimg.cn/img_convert/483726490d978e7a88acccf94dc39cf2.png)
 
 ## Step4(开始~~掉发~~激活)
-1. 当您点击申请提交免费产品后,****JETBRAINS****公司会在一周内审核您的申请,审核通过会向您邮箱发送邮件(如下图)...,那么恭喜你白嫖成功...接下来就是在IDEA中激活...
+1. 当您点击申请提交免费产品后,**JETBRAINS**公司会在一周内审核您的申请,审核通过会向您邮箱发送邮件(如下图)...,那么恭喜你白嫖成功...接下来就是在IDEA中激活...
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/089f6398cd814758ad6ae253e894f949.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAbGpqdHBjbg==,size_20,color_FFFFFF,t_70,g_se,x_16#pic_center)
 
 2. 下载安装IDEA专业版打开并登录你申请成功的**JETBRAINS**账号即可
