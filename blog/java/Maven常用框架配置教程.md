@@ -1,4 +1,5 @@
 ---
+slug: maven-deploy
 title: Maven常用框架配置教程
 date: 2022-05-10
 authors: ljj
