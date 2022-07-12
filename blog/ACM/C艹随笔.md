@@ -32,6 +32,7 @@ tags: [cpp, ACM, 函数]
 格式: `__builtin_xxx + (l || ll)(x)` 
 
 例如: `__builtin_popcountl(x)` || `__builtin_popcountll(x)`  
+:::
 
 ### 内建开平方函数
 
