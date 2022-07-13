@@ -17,7 +17,7 @@ tags: [cpp, ACM, 函数]
 2. `__builtin_clz(x)`
 返回`x`的二进制下前导的`0`的个数
 
-3.`__builtin_ctz(x)`
+3. `__builtin_ctz(x)`
 返回`x`的二进制下末尾的`0`的个数
 
 4. `__builtin_popcount(x)`
@@ -41,4 +41,39 @@ tags: [cpp, ACM, 函数]
 1. `__builtin_sqrt(x)` //返回`8`字节`double`类型
 2. `__builtin_sqrtl(x)` //返回`16`字节`long double`类型
 3. `__builtin_sqrtf(x)` //返回`4`字节`float`类型
+
+## 字符串相关函数
+
+### 大小写转换
+1. `char toupper(char c)` 
+2. `char tolower(char c)`
+3. `transform(str.begin(), str.end(), str.begin(), ::toupper)`
+
+## 最值相关函数
+
+### 数组中最大/小值
+
+```cpp
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    //an array
+    int arr[] = { 100, 200, -100, 300, 400 };
+
+    //a vector
+    vector<int> v1{ 10, 20, 30, 40, 50 };
+
+    //finding largest element from the array
+    int result = *max_element(arr + 0, arr + 5);
+    cout << "largest element of the array:" << result << endl;
+
+    //finding largest element from the vector
+    result = *max_element(v1.begin(), v1.end());
+    cout << "largest element of the vector:" << result << endl;
+
+    return 0;
+}
+```
 
