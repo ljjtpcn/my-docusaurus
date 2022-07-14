@@ -72,8 +72,22 @@ int main()
     //finding largest element from the vector
     result = *max_element(v1.begin(), v1.end());
     cout << "largest element of the vector:" << result << endl;
-
+    
+    cout << max({1, 2, 3, 4, 43, 444}); // 444
     return 0;
 }
 ```
 
+## vector
+
+### std前缀和
+
+1. `partial_sum(arr.begin(), arr.end(), s.begin() + 1)`
+
+    ```cpp
+
+        //球arr前缀和,保存至s中,从下标1开始
+        vector<int> arr(n, 0), s(n + 1, 0);
+        for (int i = 0; i < n; i++) cin >> arr[i];
+        partial_sum(arr.begin(), arr.end(), s.begin() + 1);
+    ```
